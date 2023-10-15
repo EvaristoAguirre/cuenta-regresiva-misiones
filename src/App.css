@@ -1,42 +1,75 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  max-width: 1380px;
+  max-height: 1000px;
+  padding: 0;
   text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.fondo {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px,1fr));
+  grid-auto-rows: minmax(100px,auto);
+  gap: 10px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.imagen {
+  width: auto;
+  height: auto;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.fondo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.item-contador{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  background-color: rgb(192, 227, 248);
+  padding: 10px;
+}
+
+.item-contador h1 {
+  color: lightslategray;
+  padding: 5px;
+}
+
+.contador {
+  font-size: 26px;
+  color: lightslategray;
+  font-weight: 600;
+  padding: 5px;
+}
+
+.contador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width:500px) {
+  .fondo {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px,1fr));
+    grid-template-rows: repeat(3, minmax(100px,1fr));
+    gap: 5px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .item-contador h1 {
+    font-size: 16px;
+    font-weight: 400;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  
+  .contador {
+    font-size: 13px;
+    font-weight: 400;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
